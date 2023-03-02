@@ -1,0 +1,18 @@
+.sidebar {
+    width: 76px;
+}
+
+.menu {
+    margin-top: 94px;
+}
+
+.menu a:hover {
+    color: #08b5b6;
+    transition: all 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 992px) {
+    .sidebar {
+        width: 30%;
+    }
+}
