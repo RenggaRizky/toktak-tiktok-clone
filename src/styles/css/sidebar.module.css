@@ -11,8 +11,64 @@
     transition: all 0.5s ease-in-out;
 }
 
+.divider {
+    width: 50%;
+    margin: 0 auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #adb5bd;
+}
+
+.subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.username {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.topicContent {
+    font-size: 24px;
+}
+
+.topicName {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.footerMenu {
+    font-size: 12px;
+}
+
+.footerMenu li a:hover {
+    text-decoration: underline;
+}
+
 @media screen and (min-width: 992px) {
     .sidebar {
-        width: 30%;
+        width: 20%;
+        border: none !important;
+    }
+
+    .divider {
+        width: 100%;
+    }
+
+    .topicContent {
+        font-size: 16px;
     }
 }

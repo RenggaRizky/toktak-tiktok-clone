@@ -1,13 +1,17 @@
 import styles from "@/styles/css/sidebar.module.css";
-import { AiFillHome, AiOutlineSearch } from "react-icons/ai";
+import { AiFillCar, AiFillCheckCircle, AiFillHome, AiOutlineSearch } from "react-icons/ai";
+import { MdComputer, MdOutlineTheaterComedy, MdSportsBasketball } from "react-icons/md";
+import { IoIosSchool, IoLogoGameControllerA, IoMdMusicalNotes } from "react-icons/io";
+import { HiOutlineFilm } from "react-icons/hi";
+import { GiCat, GiClothes } from "react-icons/gi";
+import { FaBlogger, FaLaughSquint, FaRegNewspaper } from "react-icons/fa";
+import { TbRoad } from "react-icons/tb";
 import Link from "next/link";
 import Image from "next/image";
 
 const users = [
     { name: "Adam", profile: "/account.png" },
-    { name: "Adam", profile: "/account.png" },
-    { name: "Adam", profile: "/account.png" },
-    { name: "Adam", profile: "/account.png" },
+    { name: "Adam ", profile: "/account.png" },
     { name: "Adam", profile: "/account.png" },
     { name: "Adam", profile: "/account.png" },
     { name: "Adam", profile: "/account.png" },
@@ -16,21 +20,56 @@ const users = [
     { name: "Adam", profile: "/account.png" },
 ];
 
-const Sidebar = () => {
-    const suggestedAccount = users.map((user) => {
-        return (
-            <Link href='/' className='rouded-circle mb-3' key={user.name}>
-                {/* <p>{user.name}</p> */}
-                <Image src={user.profile} height={28} width={28} alt={user.name} />
-            </Link>
-        );
-    });
+// prettier-ignore
+const topics = [
+    { name: "Kendaraan", content: <><AiFillCar /></> },
+    { name: "Komedi", content: <><MdOutlineTheaterComedy /></> },
+    { name: "Pendidikan", content: <><IoIosSchool /></> },
+    { name: "Hiburan", content: <><FaLaughSquint/></> },
+    { name: "Film & Animasi", content: <><HiOutlineFilm/></> },
+    { name: "Game", content: <><IoLogoGameControllerA /></> },
+    { name: "Gaya", content: <><GiClothes /></> },
+    { name: "Musik", content: <><IoMdMusicalNotes /></> },
+    { name: "Berita & Politik", content: <><FaRegNewspaper /></> },
+    { name: "Blog", content: <><FaBlogger /></> },
+    { name: "Hewan", content: <><GiCat/></> },
+    { name: "Olahraga", content: <><MdSportsBasketball /></> },
+    { name: "Sains & Teknologi", content: <><MdComputer/></> },
+    { name: "Perjalanan & Acara", content: <><TbRoad /></> },
+];
 
+const suggestedAccount = users.map((user) => {
     return (
-        <aside className={`${styles.sidebar} bg-light border-end border-3 text-center py-4 text-lg-start border-lg-0`}>
+        <Link href='/' className='rouded-circle mb-3 d-lg-flex align-items-center' key={user.name}>
+            <Image src={user.profile} height={32} width={32} alt={user.name} />
+            <div className='d-none d-lg-inline-block  ms-lg-3 '>
+                <div className='d-lg-flex align-items-center'>
+                    <p className={`${styles.name} fw-bold text-dark mb-0`}>{user.name}</p>
+                    <AiFillCheckCircle className='text-verified ms-lg-2' />
+                </div>
+                <p className={`${styles.username} mb-0 text-gray`}>{user.name}</p>
+            </div>
+        </Link>
+    );
+});
+
+const discover = topics.map((topic) => {
+    return (
+        <Link href='/' key={topic.name} className='m-1 '>
+            <button className={`${styles.topicContent} d-flex align-items-center text-dark btn btn-light border-secondary border-2 rounded-pill py-2`}>
+                {topic.content} <p className={`${styles.topicName} mb-0 ms-3 d-none d-lg-inline-block`}>{topic.name}</p>
+            </button>
+        </Link>
+    );
+});
+
+const Sidebar = () => {
+    return (
+        <aside className={`${styles.sidebar} bg-light border-end border-3 text-center py-4 text-lg-start`}>
             <div className={`${styles.menu} d-flex flex-column mb-4`}>
-                <Link href='/'>
+                <Link href='/' className='d-lg-flex align-items-center'>
                     <AiFillHome className='fs-3 mb-3 mb-lg-0' />
+                    <p className={["fw-bold fs-6 my-0 ms-0 d-none ms-lg-3 d-lg-inline-block"].join(" ")}>Untuk Anda</p>
                 </Link>
 
                 <Link href='/' className='d-lg-none'>
@@ -38,12 +77,54 @@ const Sidebar = () => {
                 </Link>
             </div>
 
-            <hr className='w-50 mx-auto my-0 border-1 text-gray border-gray d-lg-none' />
-            <div className='lg-none w-75 my-0 border-bottom border-2 text-gray border-gray d-lg-inline-block'></div>
+            <hr className={styles.divider} />
 
-            <div className='d-flex flex-column mt-4'>{suggestedAccount}</div>
+            <div>
+                <p className={`${styles.subtitle} d-none d-lg-inline-block mt-lg-4  mb-lg-3`}>Saran Akun</p>
+                <div className='d-flex flex-column mt-4 mt-lg-0'>{suggestedAccount}</div>
+            </div>
 
-            <hr className='w-50 mx-auto my-0 border-1 text-gray border-gray' />
+            <hr className={styles.divider} />
+
+            <div className='mb-3 mt-3 mt-lg-0'>
+                <p className={`${styles.subtitle} d-none d-lg-inline-block mt-lg-4  mb-lg-3`}>Temukan</p>
+                <div className='d-flex flex-wrap justify-content-center justify-content-lg-start'>{discover}</div>
+            </div>
+
+            <hr className={styles.divider} />
+
+            {/* prettier-ignore */}
+            <div className="my-4 d-none d-lg-inline-block">
+                <ul className={`${styles.footerMenu} d-flex flex-wrap text-link list-unstyled`}>
+                    <li><Link href="" className="me-2">Tentang Kami</Link></li>
+                    <li><Link href="" className="me-2">Ruang Berita</Link></li>
+                    <li><Link href="" className="me-2">Kontak</Link></li>
+                    <li><Link href="" className="me-2">Karier</Link></li>
+                </ul>
+
+                <ul className={`${styles.footerMenu} d-flex flex-wrap text-link list-unstyled`}>
+                    <li><Link href="" className="me-2">TokTak for Good</Link></li>
+                    <li><Link href="" className="me-2">Iklan</Link></li>
+                    <li><Link href="" className="me-2">Developers</Link></li>
+                    <li><Link href="" className="me-2">TokTak Rewards</Link></li>
+                    <li><Link href="" className="me-2">TokTak Browse</Link></li>
+                    <li><Link href="" className="me-2">TokTak Embeds</Link></li>
+                </ul>
+
+                <ul className={`${styles.footerMenu} d-flex flex-wrap text-link list-unstyled`}>
+                    <li><Link href="" className="me-2">Bantuan</Link></li>
+                    <li><Link href="" className="me-2">Keamanan</Link></li>
+                    <li><Link href="" className="me-2">Ketentuan</Link></li>
+                    <li><Link href="" className="me-2">Privasi</Link></li>
+                    <li><Link href="" className="me-2">Portal Kreator</Link></li>
+                    <li><Link href="" className="me-2">Halaman Kebijakan</Link></li>
+                    <li><Link href="" className="me-2">Lainnya</Link></li>
+                </ul>
+            </div>
+
+            <hr className={`${styles.divider} d-none d-lg-inline-block`} />
+
+            <footer className={`${styles.footerMenu} d-none d-lg-inline-block text-center my-4 text-link`}>© 2023 TokTak</footer>
         </aside>
     );
 };
