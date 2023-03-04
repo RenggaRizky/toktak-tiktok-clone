@@ -1,10 +1,10 @@
 import Image from "next/image";
-import styles from "@/styles/css/search.module.css";
+import styles from "@/styles/css/navbar.module.css";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const Navbar = () => {
     return (
-        <nav className='navbar navbar-expand-lg py-3 w-100 position-fixed top-0 start-0 z-3'>
+        <nav className='navbar navbar-expand-lg py-3 w-100 position-fixed top-0 left-0 start-0 z-3'>
             <div className='container-lg'>
                 <a className='navbar-brand' href='#'>
                     <Image src='/toktak.png' width={48} height={48} alt='TokTak Logo' />

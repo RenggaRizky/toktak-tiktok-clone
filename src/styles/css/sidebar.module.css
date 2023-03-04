@@ -1,5 +1,19 @@
 .sidebar {
     width: 76px;
+    height: 100vh;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 4px; /* width of the entire scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #fff; /* color of the tracking area */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0; /* color of the scroll thumb */
+    border-radius: 50px; /* roundness of the scroll thumb */
 }
 
 .menu {
@@ -61,11 +75,16 @@
 @media screen and (min-width: 992px) {
     .sidebar {
         width: 20%;
+        /* flex-basis: 20%; */
         border: none !important;
     }
 
+    .sidebar::-webkit-scrollbar {
+        width: 6px; /* width of the entire scrollbar */
+    }
+
     .divider {
-        width: 100%;
+        width: 90%;
     }
 
     .topicContent {

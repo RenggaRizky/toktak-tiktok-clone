@@ -1,0 +1,14 @@
+.mainContent {
+    padding: 120px 20px 0 100px;
+}
+
+@media screen and (min-width: 992px) {
+    .mainContent {
+        /* width: 80%; */
+        /* flex-basis: 80%; */
+        padding-top: 120px;
+        padding-left: 100px;
+        padding-right: auto;
+        padding-bottom: 0;
+    }
+}

@@ -1,5 +1,5 @@
 import styles from "@/styles/css/sidebar.module.css";
-import { AiFillCar, AiFillCheckCircle, AiFillHome, AiOutlineSearch } from "react-icons/ai";
+import { AiFillCar, AiFillHome, AiOutlineSearch } from "react-icons/ai";
 import { MdComputer, MdOutlineTheaterComedy, MdSportsBasketball } from "react-icons/md";
 import { IoIosSchool, IoLogoGameControllerA, IoMdMusicalNotes } from "react-icons/io";
 import { HiOutlineFilm } from "react-icons/hi";
@@ -7,7 +7,7 @@ import { GiCat, GiClothes } from "react-icons/gi";
 import { FaBlogger, FaLaughSquint, FaRegNewspaper } from "react-icons/fa";
 import { TbRoad } from "react-icons/tb";
 import Link from "next/link";
-import Image from "next/image";
+import Account from "./Account";
 
 const users = [
     { name: "Adam", profile: "/account.png" },
@@ -39,18 +39,7 @@ const topics = [
 ];
 
 const suggestedAccount = users.map((user) => {
-    return (
-        <Link href='/' className='rouded-circle mb-3 d-lg-flex align-items-center' key={user.name}>
-            <Image src={user.profile} height={32} width={32} alt={user.name} />
-            <div className='d-none d-lg-inline-block  ms-lg-3 '>
-                <div className='d-lg-flex align-items-center'>
-                    <p className={`${styles.name} fw-bold text-dark mb-0`}>{user.name}</p>
-                    <AiFillCheckCircle className='text-verified ms-lg-2' />
-                </div>
-                <p className={`${styles.username} mb-0 text-gray`}>{user.name}</p>
-            </div>
-        </Link>
-    );
+    return <Account key={user.name} url='/' name={user.name} img={user.profile} height={32} width={32} nameStyle={styles.name} usernameStyle={styles.username} />;
 });
 
 const discover = topics.map((topic) => {
@@ -65,7 +54,7 @@ const discover = topics.map((topic) => {
 
 const Sidebar = () => {
     return (
-        <aside className={`${styles.sidebar} bg-light border-end border-3 text-center py-4 text-lg-start`}>
+        <aside className={`${styles.sidebar} bg-light border-end border-3 text-center py-4 text-lg-start overflow-y-scroll position-fixed top-0 left-0`}>
             <div className={`${styles.menu} d-flex flex-column mb-4`}>
                 <Link href='/' className='d-lg-flex align-items-center'>
                     <AiFillHome className='fs-3 mb-3 mb-lg-0' />
@@ -94,7 +83,7 @@ const Sidebar = () => {
             <hr className={styles.divider} />
 
             {/* prettier-ignore */}
-            <div className="my-4 d-none d-lg-inline-block">
+            <div className="my-4 d-none d-lg-inline-block ">
                 <ul className={`${styles.footerMenu} d-flex flex-wrap text-link list-unstyled`}>
                     <li><Link href="" className="me-2">Tentang Kami</Link></li>
                     <li><Link href="" className="me-2">Ruang Berita</Link></li>
