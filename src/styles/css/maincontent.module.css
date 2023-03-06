@@ -39,6 +39,16 @@
     /* height: 100vh; */
 }
 
+@media screen and (min-width: 576px) {
+    .caption {
+        font-size: 14px;
+    }
+
+    .topic {
+        font-size: 15px;
+    }
+}
+
 @media screen and (min-width: 992px) {
     .mainContent {
         /* width: 80%; */

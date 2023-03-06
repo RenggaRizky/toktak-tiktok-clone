@@ -7,6 +7,10 @@ const Home = () => {
         <Container>
             <MainContent>
                 <PostMd />
+                <PostMd />
+                <PostMd />
+                <PostMd />
+                <PostMd />
             </MainContent>
         </Container>
     );
