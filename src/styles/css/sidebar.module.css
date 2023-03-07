@@ -75,7 +75,6 @@
 @media screen and (min-width: 992px) {
     .sidebar {
         width: 20%;
-        /* flex-basis: 20%; */
         border: none !important;
     }
 
@@ -89,5 +88,11 @@
 
     .topicContent {
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .sidebar {
+        width: 288px;
     }
 }

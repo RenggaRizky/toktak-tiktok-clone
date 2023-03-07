@@ -7,9 +7,13 @@ const Home = () => {
         <Container>
             <MainContent>
                 <PostMd />
+                <hr className='mb-4' />
                 <PostMd />
+                <hr className='mb-4' />
                 <PostMd />
+                <hr className='mb-4' />
                 <PostMd />
+                <hr className='mb-4' />
                 <PostMd />
             </MainContent>
         </Container>
