@@ -1,14 +1,15 @@
 import Image from "next/image";
 import styles from "@/styles/css/navbar.module.css";
 import { AiOutlinePlus } from "react-icons/ai";
+import Link from "next/link";
 
 const Navbar = () => {
     return (
         <nav className='navbar navbar-expand-lg py-3 w-100 position-fixed top-0 left-0 start-0 z-3'>
             <div className='container-lg'>
-                <a className='navbar-brand' href='#'>
+                <Link className='navbar-brand' href='/'>
                     <Image src='/toktak.png' width={48} height={48} alt='TokTak Logo' />
-                </a>
+                </Link>
 
                 <form className={`${styles.form} offset-md-2 offset-lg-1`} role='search'>
                     <div className={styles.group}>
@@ -23,10 +24,12 @@ const Navbar = () => {
 
                 <div className='' id='navbarNavAltMarkup'>
                     <div className='navbar-nav d-flex gap-3 flex-row'>
-                        <button className='btn btn-light border-secondary border-2 rounded-2 text-dark px-4 py-2 fw-bold fs-6 align-items-center gap-2 d-none d-sm-flex' type='submit'>
-                            <AiOutlinePlus className='fw-bold fs-6' />
-                            <p className='m-0'>Unggah</p>
-                        </button>
+                        <Link href='/upload'>
+                            <button className='btn btn-light border-secondary border-2 rounded-2 text-dark px-4 py-2 fw-bold fs-6 align-items-center gap-2 d-none d-sm-flex' type='submit'>
+                                <AiOutlinePlus className='fw-bold fs-6' />
+                                <p className='m-0'>Unggah</p>
+                            </button>
+                        </Link>
                         <button className='btn btn-primary rounded-2 text-white text-white px-4 py-2 fw-bold fs-6' type='submit'>
                             Masuk
                         </button>

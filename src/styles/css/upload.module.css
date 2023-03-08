@@ -1,0 +1,12 @@
+.uploadWrapper {
+    background-color: rgb(234, 244, 249, 0.5);
+    padding: 128px 0px 38px 0px;
+}
+
+.uploadWrapper > section {
+    min-height: 80vh;
+}
+
+.uploadVideo {
+    border-style: dashed;
+}
