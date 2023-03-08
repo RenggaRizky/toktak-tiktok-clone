@@ -10,3 +10,23 @@
 .uploadVideo {
     border-style: dashed;
 }
+
+.buttonWrapper > * {
+    width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+    .uploadWrapper {
+        padding: 128px 144px 38px 144px;
+    }
+
+    .buttonWrapper > * {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .uploadWrapper {
+        padding: 128px 216px 38px 216px;
+    }
+}
