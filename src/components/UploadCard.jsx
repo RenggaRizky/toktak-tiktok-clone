@@ -10,34 +10,33 @@ const UploadCard = () => {
                     <p className='fs-6 text-gray mb-md-4 mb-lg-5'>Posting video ke akun anda</p>
                     <form className='row gy-5 gx-md-4'>
                         <div className='col-12 col-md-6 col-lg-5 col-xl-4 mt-5'>
-                            <div className={`${styles.uploadVideo} border-link border-4 text-center p-4 rounded-3`}>
-                                <IoMdCloudUpload className='text-link' style={{ fontSize: "80px" }} />
-                                <h2 className='display-6 fs-6 text-dark fw-bold mt-3 mb-5'>Pilih video untuk diunggah</h2>
-                                <p className='fs-6 text-dark fw-light mb-4'>MP4, WebM, atau OGG</p>
-                                <p className='fs-6 text-dark fw-light mb-4'>Resolusi 720x1280 atau lebih tinggi</p>
-                                <p className='fs-6 text-dark fw-light mb-4'>Sampai 10 menit</p>
-                                <p className='fs-6 text-dark fw-light mb-4'>Kurang dari 2GB</p>
+                            <label htmlFor='upload' className='form-label pe-auto'>
+                                <div className={`${styles.uploadVideo} border-4 text-center p-4 rounded-3`}>
+                                    <IoMdCloudUpload className='text-link' style={{ fontSize: "80px" }} />
+                                    <h2 className='display-6 fs-6 text-dark fw-bold mt-3 mb-5'>Pilih video untuk diunggah</h2>
+                                    <p className='fs-6 text-dark fw-light mb-4'>MP4, WebM, atau OGG</p>
+                                    <p className='fs-6 text-dark fw-light mb-4'>Resolusi 720x1280 atau lebih tinggi</p>
+                                    <p className='fs-6 text-dark fw-light mb-4'>Sampai 10 menit</p>
+                                    <p className='fs-6 text-dark fw-light mb-4'>Kurang dari 2GB</p>
+                                    <button className='btn btn-primary text-white w-100 my-4' onClick={(event) => event.preventDefault()}>
+                                        Pilih File
+                                    </button>
 
-                                <button for='upload' className='btn btn-primary text-white w-100 my-4'>
-                                    Pilih File
-                                </button>
-                                {/* <label for='upload' className='form-label'>
-                                    Large file input example
-                                </label> */}
-                                <input className='d-none' id='upload' type='file' />
-                            </div>
+                                    <input className='d-none' id='upload' type='file' />
+                                </div>
+                            </label>
                         </div>
 
                         <div className='col-12 col-md-6 col-lg-7 col-xl-8 px-xl-4'>
                             <div className='mb-4'>
-                                <label for='caption' className='form-label text-dark fw-bold fs-6'>
+                                <label htmlFor='caption' className='form-label text-dark fw-bold fs-6'>
                                     Keterangan
                                 </label>
                                 <input type='email' className='form-control border border-link ' id='caption' />
                             </div>
 
                             <div className='mb-5'>
-                                <label for='topics' className='form-label text-dark fw-bold fs-6'>
+                                <label htmlFor='topics' className='form-label text-dark fw-bold fs-6'>
                                     Pilih topik
                                 </label>
                                 <select className='form-select form-select-lg mb-3 text-dark fs-6 border border-link' id='topics'>

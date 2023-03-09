@@ -20,7 +20,7 @@ const PostMd = () => {
                         <source src='/livmu.mp4' type='video/mp4' />
                     </video>
                 </div>
-                <div className={`${styles.buttonAction} d-flex flex-column justify-content-center`}>
+                <div className='d-none d-sm-flex flex-column justify-content-center'>
                     <div className=' '>
                         <button className='btn rounded-circle  btn-secondary'>
                             <AiTwotoneHeart className='fs-5' />

@@ -36,12 +36,6 @@
     width: 225px;
 }
 
-@media screen and (max-width: 395px) {
-    .buttonAction {
-        display: none !important;
-    }
-}
-
 @media screen and (min-width: 576px) {
     .caption {
         font-size: 14px;

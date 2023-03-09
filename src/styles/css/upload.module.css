@@ -8,7 +8,15 @@
 }
 
 .uploadVideo {
+    border-color: #adb5bd;
     border-style: dashed;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.uploadVideo:hover {
+    background-color: #eaf4f9;
+    border-color: #08b5b6;
 }
 
 .buttonWrapper > * {
