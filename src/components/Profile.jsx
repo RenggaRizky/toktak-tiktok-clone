@@ -1,6 +1,7 @@
 import Account from "./Account";
 import styles from "@/styles/css/profile.module.css";
 import PostSm from "./PostSm";
+import PostMd from "./PostMd";
 
 const Profile = () => {
     return (
@@ -9,7 +10,7 @@ const Profile = () => {
                 <Account url='/' name='Rengga Rizky Septian' img='/account.png' height={64} width={64} hide={false} isProfile={true} nameStyle={styles.name} usernameStyle={styles.username} />
             </div>
 
-            <form className='d-flex column-gap-5 border-link border-bottom pb-2'>
+            <form className='d-flex column-gap-5 border-link border-bottom pb-2 mb-4'>
                 <label htmlFor='videos' className={`${styles.radioTabs} text-dark`}>
                     <input type='radio' name='tabs' id='videos' />
                     Video
@@ -20,7 +21,15 @@ const Profile = () => {
                 </label>
             </form>
 
-            <div>
+            <div className='row gx-3'>
+                <PostSm />
+                <PostSm />
+                <PostSm />
+                <PostSm />
+                <PostSm />
+                <PostSm />
+                <PostSm />
+                <PostSm />
                 <PostSm />
                 <PostSm />
                 <PostSm />
