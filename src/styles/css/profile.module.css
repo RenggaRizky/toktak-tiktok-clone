@@ -14,12 +14,16 @@
     font-size: 12px;
 }
 
-.radioTabs {
+.radioTabs,
+.radioTabsActive {
     font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
 }
 
-.radioTabs > input {
+.radioTabs > input,
+.radioTabsActive > input {
     display: none;
 }
 
@@ -96,6 +100,11 @@
 
     .video {
         height: 380px;
+    }
+
+    .radioTabs,
+    .radioTabsActive {
+        font-size: 18px;
     }
 }
 
